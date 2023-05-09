@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create product relations table
+      author: Yusif Hajiyev
+      changes:
+        - createTable:
+            tableName: product_relations
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: product_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_product_relations_product_id
+                    references: product(id)
+              - column:
+                  name: shop_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_product_relations_shop_id
+                    references: shop(id)
+              - column:
+                  name: location_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_product_relations_location_id
+                    references: location(id)
+              - column:
+                  name: price
+                  type: float
+              - column:
+                  name: delivery_price
+                  type: float
+              - column:
+                  name: currency
+                  type: varchar(20)
+              - column:
+                  name: star_count
+                  type: int
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp

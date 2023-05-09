@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create account table
+      author: Yusif Hajiyev
+      changes:
+        - createTable:
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: full_name
+                  type: varchar(255)
+              - column:
+                  name: email
+                  type: varchar(100)
+              - column:
+                  name: password
+                  type: varchar(255)
+              - column:
+                  name: phone_number
+                  type: varchar(50)
+              - column:
+                  name: address
+                  type: text
+              - column:
+                  name: status
+                  type: varchar(30)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+

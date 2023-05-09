@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create product color table
+      author: Yusif Hajiyev
+      changes:
+        - createTable:
+            tableName: product_color
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(30)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp

@@ -1,0 +1,38 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://185.197.249.160/ecommerce_app
+    username: yusif
+    password: Pr0@^f1d
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.MySQLDialect
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
+
+jwt:
+  accessToken:
+    expiration:
+      time: 15
+  refreshToken:
+    expiration:
+      count: 50
+      time: 43200
+
+crypt:
+  algorithm:
+    message-digest: SHA-256
+    aes: AES
+  token-secret-key: c3VwZXJfYXBwX2Jha2NlbGxfc2VjcmV0
+  referral-secret-key: cmVmZXJyYWxsaW5r
+  global-salt: super-app-global-salt
+
+springdoc:
+  swagger-ui.path: /api
+  swagger-ui.tryItOutEnabled: true

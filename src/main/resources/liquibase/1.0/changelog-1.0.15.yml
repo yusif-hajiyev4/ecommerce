@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: Add new columns in product relations table
+      author: Yusif Hajiyev
+      changes:
+        - addColumn:
+            tableName: product_relations
+            columns:
+              - column:
+                  name: category_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_product_relations_category_id
+                    references: category(id)
+              - column:
+                  name: sub_category_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_product_relations_sub_category_id
+                    references: sub_category(id)

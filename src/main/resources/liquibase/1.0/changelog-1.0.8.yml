@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create product table
+      author: Yusif Hajiyev
+      changes:
+        - createTable:
+            tableName: product
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name_az
+                  type: varchar(200)
+              - column:
+                  name: name_en
+                  type: varchar(200)
+              - column:
+                  name: name_ru
+                  type: varchar(200)
+              - column:
+                  name: sub_category_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_product_sub_category_id
+                    references: sub_category(id)
+              - column:
+                  name: description_az
+                  type: text
+              - column:
+                  name: description_en
+                  type: text
+              - column:
+                  name: description_ru
+                  type: text
+              - column:
+                  name: is_popular
+                  type: boolean
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+

@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create login history table
+      author: Yusif Hajiyev
+      changes:
+        - createTable:
+            tableName: login_history
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: account_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_login_history_account_id
+                    references: account(id)
+              - column:
+                  name: type
+                  type: varchar(30)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+

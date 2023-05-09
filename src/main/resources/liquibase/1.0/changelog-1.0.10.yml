@@ -1,0 +1,63 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create order table
+      author: Yusif Hajiyev
+      changes:
+        - createTable:
+            tableName: order
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: account_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_order_account_id
+                    references: account(id)
+              - column:
+                  name: product_relations_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_order_product_relations_id
+                    references: product_relations(id)
+              - column:
+                  name: size_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_order_size_id
+                    references: product_size(id)
+              - column:
+                  name: color_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_order_color_id
+                    references: product_color(id)
+              - column:
+                  name: total_price
+                  type: float
+              - column:
+                  name: currency
+                  type: varchar(20)
+              - column:
+                  name: is_pay
+                  type: boolean
+              - column:
+                  name: status
+                  type: varchar(30)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp

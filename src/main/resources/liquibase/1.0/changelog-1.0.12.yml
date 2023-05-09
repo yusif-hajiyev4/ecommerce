@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: Add column to produc table
+      author: Yusif Hajiyev
+      changes:
+        - addColumn:
+            tableName: product
+            columns:
+              - column:
+                  name: image_url
+                  type: varchar(255)

@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create user auth table
+      author: Yusif Hajiyev
+      changes:
+        - createTable:
+            tableName: user_auth
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: account_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_user_auth_account_id
+                    references: account(id)
+              - column:
+                  name: public_key
+                  type: text
+              - column:
+                  name: expired_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp

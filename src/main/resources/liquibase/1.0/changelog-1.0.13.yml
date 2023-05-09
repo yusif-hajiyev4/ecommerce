@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: Delete some columns in product relations table
+      author: Yusif Hajiyev
+      changes:
+        - dropColumn:
+            tableName: product_relations
+            columnName: price
+        - dropColumn:
+            tableName: product_relations
+            columnName: star_count

@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create payment table
+      author: Yusif Hajiyev
+      changes:
+        - createTable:
+            tableName: payment
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: account_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_payment_account_id
+                    references: account(id)
+              - column:
+                  name: order_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_payment_order_id
+                    references: order(id)
+              - column:
+                  name: amount
+                  type: float
+              - column:
+                  name: currency
+                  type: varchar(20)
+              - column:
+                  name: billing_address
+                  type: varchar(100)
+              - column:
+                  name: status
+                  type: varchar(30)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp

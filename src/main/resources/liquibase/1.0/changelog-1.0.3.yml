@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create sub category table
+      author: Yusif Hajiyev
+      changes:
+        - createTable:
+            tableName: sub_category
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name_az
+                  type: varchar(100)
+              - column:
+                  name: name_en
+                  type: varchar(100)
+              - column:
+                  name: name_ru
+                  type: varchar(100)
+              - column:
+                  name: category_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_sub_category_category_id
+                    references: category(id)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp

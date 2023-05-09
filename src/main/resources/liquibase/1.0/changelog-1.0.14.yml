@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: Add new columns in product table
+      author: Yusif Hajiyev
+      changes:
+        - addColumn:
+            tableName: product
+            columns:
+              - column:
+                  name: price
+                  type: float
+              - column:
+                  name: currency
+                  type: varchar(10)
+              - column:
+                  name: star_count
+                  type: int
+              - column:
+                  name: is_flash_sale
+                  type: boolean
+              - column:
+                  name: discount_percent
+                  type: float
+              - column:
+                  name: is_just_for_you
+                  type: boolean
