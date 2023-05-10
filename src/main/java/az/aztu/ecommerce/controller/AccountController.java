@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import static az.aztu.ecommerce.model.constant.Headers.AUTHORIZATION;
 
 @RestController
-@RequestMapping("v1/accounts")
+@RequestMapping("api/v1/accounts")
 @RequiredArgsConstructor
 public class AccountController {
 

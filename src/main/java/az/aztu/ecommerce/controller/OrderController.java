@@ -14,7 +14,7 @@ import static az.aztu.ecommerce.model.constant.Headers.AUTHORIZATION;
 import static az.aztu.ecommerce.model.constant.Headers.LANGUAGE;
 
 @RestController
-@RequestMapping("v1/orders")
+@RequestMapping("api/v1/orders")
 @RequiredArgsConstructor
 public class OrderController {
 

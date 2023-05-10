@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import static az.aztu.ecommerce.model.constant.Headers.REFRESH_TOKEN;
 
 @RestController
-@RequestMapping("v1/auth")
+@RequestMapping("api/v1/auth")
 @RequiredArgsConstructor
 public class AuthController {
 

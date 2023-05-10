@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import static az.aztu.ecommerce.model.constant.Headers.AUTHORIZATION;
 
 @RestController
-@RequestMapping("v1/payments")
+@RequestMapping("api/v1/payments")
 @RequiredArgsConstructor
 public class PaymentController {
 

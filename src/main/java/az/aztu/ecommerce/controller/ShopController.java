@@ -14,7 +14,7 @@ import java.util.List;
 import static az.aztu.ecommerce.model.constant.Headers.LANGUAGE;
 
 @RestController
-@RequestMapping("v1/shops")
+@RequestMapping("api/v1/shops")
 @RequiredArgsConstructor
 public class ShopController {
 
